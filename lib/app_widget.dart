@@ -15,6 +15,7 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       // ignore: deprecated_member_use
+      debugShowCheckedModeBanner: false,
       routes: {
         '/': (context) => LoginPage(),
         '/home': (context) => RentalListPage(),
