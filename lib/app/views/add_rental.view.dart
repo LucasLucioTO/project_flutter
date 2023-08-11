@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../components/drawer_menu.dart';
 import '../controllers/rental_controller.dart';
+import '../utils/input_mask.dart';
 
 class AddRentalView extends StatefulWidget {
   @override
@@ -65,6 +66,9 @@ class _AddRentalViewState extends State<AddRentalView> {
                     border: OutlineInputBorder(),
                     icon: Icon(Icons.phone_android),
                   ),
+                  inputFormatters: [
+                    PhoneNumberFormatter.phoneNumberFormatter,
+                  ],
                 ),
                 const SizedBox(height: 10),
                 TextField(
@@ -105,6 +109,9 @@ class _AddRentalViewState extends State<AddRentalView> {
                     border: OutlineInputBorder(),
                     icon: Icon(Icons.calendar_month_outlined),
                   ),
+                  inputFormatters: [
+                    PhoneNumberFormatter.dateFormatter,
+                  ],
                 ),
                 const SizedBox(height: 15),
                 OutlinedButton(
