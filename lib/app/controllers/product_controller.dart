@@ -11,7 +11,7 @@ class ProductController {
 
   ProductController(this.nameProd, this.quantity) {
     prodName = nameProd.text;
-    quant = double.parse(quantity.text);
+    quant = quantity.text != "" ? double.parse(quantity.text) : 0;
     print(quant);
   }
   saveProduct() {
