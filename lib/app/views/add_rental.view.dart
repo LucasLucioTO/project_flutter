@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../components/drawer_menu.dart';
 import '../controllers/rental_controller.dart';
+import '../utils/input_mask.dart';
 
 class AddRentalView extends StatefulWidget {
   @override
@@ -58,6 +60,7 @@ class _AddRentalViewState extends State<AddRentalView> {
                 ),
                 const SizedBox(height: 10),
                 TextField(
+                  keyboardType: TextInputType.number,
                   controller: number,
                   onChanged: (text) {},
                   decoration: const InputDecoration(
@@ -65,6 +68,9 @@ class _AddRentalViewState extends State<AddRentalView> {
                     border: OutlineInputBorder(),
                     icon: Icon(Icons.phone_android),
                   ),
+                  inputFormatters: [
+                    PhoneNumberFormatter.phoneNumberFormatter,
+                  ],
                 ),
                 const SizedBox(height: 10),
                 TextField(
@@ -80,21 +86,25 @@ class _AddRentalViewState extends State<AddRentalView> {
                 TextField(
                   controller: numberScaffold,
                   onChanged: (text) {},
+                  keyboardType: TextInputType.number,
                   decoration: const InputDecoration(
                     labelText: 'Quantidade de Andaimes',
                     border: OutlineInputBorder(),
                     icon: Icon(Icons.stairs_outlined),
                   ),
+                  inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                 ),
                 const SizedBox(height: 10),
                 TextField(
                   controller: numberPlanks,
                   onChanged: (text) {},
+                  keyboardType: TextInputType.number,
                   decoration: const InputDecoration(
                     labelText: 'Quantidade de Tabuas',
                     border: OutlineInputBorder(),
                     icon: Icon(Icons.ad_units_outlined),
                   ),
+                  inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                 ),
                 const SizedBox(height: 10),
                 TextField(
@@ -105,6 +115,9 @@ class _AddRentalViewState extends State<AddRentalView> {
                     border: OutlineInputBorder(),
                     icon: Icon(Icons.calendar_month_outlined),
                   ),
+                  inputFormatters: [
+                    PhoneNumberFormatter.dateFormatter,
+                  ],
                 ),
                 const SizedBox(height: 15),
                 OutlinedButton(

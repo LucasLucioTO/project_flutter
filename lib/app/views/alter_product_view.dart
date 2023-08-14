@@ -41,6 +41,7 @@ class _AlterProductView extends State<AlterProductView> {
                 ),
                 const SizedBox(height: 10),
                 TextField(
+                  keyboardType: TextInputType.number,
                   onChanged: (text) {},
                   decoration: const InputDecoration(
                     labelText: 'Quantidade do Produto',
